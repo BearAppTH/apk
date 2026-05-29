@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temp File Storage — APK &amp; File Upload</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Disclaimer Banner -->
+  <div class="disclaimer-banner">
+    <span class="disclaimer-icon">⚠️</span>
+    <span>
+      แอปพลิเคชันทั้งหมดบนแพลตฟอร์มนี้พัฒนาโดย <strong>boss.borwornwong@gmail.com</strong> เพียงผู้เดียว
+      — All applications on this platform are developed solely by the owner.
+    </span>
+    <a href="/disclaimer" class="disclaimer-link">ดูรายละเอียด / Details</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo">📦 TempStore</h1>
+      <p class="tagline">อัพโหลดไฟล์ชั่วคราว — ลบอัตโนมัติภายใน 24 ชั่วโมง</p>
+      <p class="tagline-en">Temporary file hosting · Auto-deleted in 24 hours</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Upload Card -->
+    <section class="upload-card" id="uploadCard">
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-icon">⬆️</div>
+        <p class="drop-label">ลากไฟล์มาวางที่นี่ หรือ</p>
+        <p class="drop-label-en">Drag &amp; drop files here, or</p>
+        <label class="btn btn-primary" for="fileInput">เลือกไฟล์ / Browse</label>
+        <input type="file" id="fileInput" hidden />
+        <p class="drop-hint">APK, ZIP, PDF, MP4 และอื่น ๆ · ขนาดสูงสุด 100 MB</p>
+        <p class="drop-hint-en">APK, ZIP, PDF, MP4 and more · Max 100 MB</p>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-wrap" id="progressWrap" hidden>
+        <div class="progress-bar" id="progressBar"></div>
+        <span class="progress-label" id="progressLabel">0%</span>
+      </div>
+      <div class="upload-status" id="uploadStatus"></div>
+    </section>
+
+    <!-- File List -->
+    <section class="files-section">
+      <h2 class="section-title">ไฟล์ที่อัพโหลด / Uploaded Files</h2>
+      <div id="fileList" class="file-list">
+        <p class="empty-msg" id="emptyMsg">ยังไม่มีไฟล์ · No files uploaded yet</p>
+      </div>
+      <button class="btn btn-secondary btn-refresh" onclick="loadFiles()">🔄 รีเฟรช / Refresh</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      © 2025 <strong>boss.borwornwong@gmail.com</strong> · ผู้พัฒนาแต่เพียงผู้เดียว · Sole Developer
+    </p>
+    <p>
+      <a href="/disclaimer">นโยบายและข้อสงวนสิทธิ์ / Disclaimer &amp; IP Policy</a>
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
